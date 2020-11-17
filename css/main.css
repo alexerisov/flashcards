@@ -1,0 +1,72 @@
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url(https://stepik.org/media/attachments/lesson/374893/world.png);
+}
+
+body, .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 6em;
+    height: 6em;
+    background-color: rgba(255,255,255,.6);
+    border: solid 1px #2196F3;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 1s linear;
+}
+.cards-holder {
+    height: 100%;
+    padding: 1em;
+    background-color: rgba(214, 228, 255, .8);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(5, minmax(min-content, 1fr));
+    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    grid-gap: 10px;
+}
+
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+h1 {
+    padding: 5px;
+    color: white;
+    background-color: rgba(33,150,243, .8);
+    border-radius: 10px;
+}
+
+p {
+    width: 9em;
+    height: 2em;
+    color: #FFFFFF;
+    background-color: #2196F3;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+    background-color: #2196F3;
+}
